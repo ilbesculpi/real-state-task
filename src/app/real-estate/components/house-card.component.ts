@@ -9,7 +9,7 @@ import { House } from '../models';
     <img class="card-img-top" [src]="house.image" alt="Card image cap" />
     <div class="card-body">
       <h5 class="card-title">{{ house.title }}</h5>
-      <div class="price">Price: {{ house.price }}</div>
+      <div class="price">Price: {{ '$' + house.price }}</div>
       <div *ngIf="house.onSale">On Sale!</div>
       <p class="card-text">{{ house.description }}</p>
     </div>

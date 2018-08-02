@@ -18,7 +18,7 @@ describe('HouseCardComponent', () => {
     price: 1000,
     onSale: false,
     title: 'My House',
-    description: 'Lorem Ipsm',
+    description: 'Lorem Ipsum',
     image: 'image.jpg'
   };
   let getHouseSpy = housesService.getHouse.and.returnValue( of(expectedHouse) );
@@ -45,21 +45,27 @@ describe('HouseCardComponent', () => {
   it('should render house title', () => {
     const cardElement: HTMLElement = fixture.nativeElement;
     const title: HTMLElement | null = cardElement.querySelector('.card-title');
-    expect(title!.textContent).toEqual('House 1');
+    expect(title!.textContent).toEqual('My House');
   });
 
   // TODO(1pts)
   it('should render card desription', () => {
     const cardElement: HTMLElement = fixture.nativeElement;
     const content: HTMLElement | null = cardElement.querySelector('.card-text');
-    expect(content!.textContent!.trim()).toEqual(`Do nostrud cupidatat dolore eiusmod cillum nisi ut id velit. Culpa amet culpa do anim adipisicing et do exercitation magna irure ipsum incididunt veniam. Occaecat id cillum proident qui in voluptate. Amet sunt elit non labore exercitation. Esse enim esse minim duis in enim magna id elit nulla tempor.`);
+    expect(content!.textContent).toEqual(`Lorem Ipsum`);
   });
 
   // TODO(1pts)
-  it('should render card image', () => {});
+  it('should render card image', () => {
+    
+  });
 
   // TODO(1pts)
-  it('should render house price', () => {});
+  it('should render house price', () => {
+    const cardElement: HTMLElement = fixture.nativeElement;
+    const price: HTMLElement | null = cardElement.querySelector('.card-text');
+    expect(price!.textContent).toEqual(`$1000`);
+  });
 
   // TODO(1pts)
   it('should render house onSale if house is on sale', () => {});
